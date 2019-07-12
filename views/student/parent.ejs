@@ -1,0 +1,35 @@
+<%include ../partials/header_student%>
+
+<div class="container">
+  <% var dd = new Date(parent.dob); %>
+    <form>
+      <div class="row">
+        <div class="form-group col-sm-6">
+         <label for="name">Name</label>
+         <input readonly type="text" class="form-control" id="name" value="<%= parent.name%>"> </input>
+        </div>
+       <div class="form-group col-sm-6">
+         <label for="dob">Date of Birth</label>
+         <input readonly class="form-control" id="dob" value="<%=dd.getDate() + '-' + (dd.getMonth()+1) +'-'+ dd.getFullYear()%>"></input>
+       </div>  
+      </div>
+     <div class="row">
+       <div class="form-group col-sm-6">
+         <label for="email"> Email ID</label>
+         <input readonly type="email" class="form-control" id="cardStatus" value= "<%= parent.emailID %>"></input>
+       </div>
+       <div class="form-group col-sm-6">
+         <label for="mobNo"> Mobile Number </label>
+         <input readonly type="text" class="form-control" id="mobNo" value="<%= parent.mobNo %>"></input>
+       </div> 
+     </div>     
+     <div class="row">
+       <div class="form-group col-sm-6">
+         <label for="addr"> Address </label>
+         <input readonly type="text" class="form-control" id="addr" value="<%= parent.address %>"></input>
+       </div>
+     </div>
+   </form>
+</div>
+
+<%include ../partials/footer%>

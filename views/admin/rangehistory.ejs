@@ -1,0 +1,62 @@
+<%include ../partials/header_admin%>
+
+<div class="container" style="margin-top:30px">
+  
+  <table id="Historybydate" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Roll No
+        <i class="fa fa-sort float-right" aria-hidden="true"></i>
+      </th>
+      <th class="th-sm">Name
+        <i class="fa fa-sort float-right" aria-hidden="true"></i>
+      </th>
+      <th class="th-sm">Date
+        <i class="fa fa-sort float-right" aria-hidden="true"></i>
+      </th>
+      <th class="th-sm">Time
+        <i class="fa fa-sort float-right" aria-hidden="true"></i>
+      </th>
+      <th class="th-sm">Activity
+        <i class="fa fa-sort float-right" aria-hidden="true"></i>
+      </th>
+  
+    </tr>
+  </thead>
+  <tbody>
+            <% for(var i=(history.length-1); i>=0; i--) {%>
+            <tr>
+              <td> <%= history[i].rollNo %></td>
+              <td> <%var std =  findstd(students, history[i].sid);%>
+                <%= std.name %>
+              </td>
+                <% dd = new Date(history[i].datetime); %>
+                <% if(history[i].activity == true) {%>
+                    <td><%= dd.getDate() + '-' + (dd.getMonth()+1) +'-'+ dd.getFullYear()  %></td>
+                    <td><%= (dd.getHours()+1) + ':' + dd.getSeconds() %></td>
+                    <td>IN</td>
+                <% } else {%>
+                    <td><%= dd.getDate() + '-' + (dd.getMonth()+1) +'-'+ dd.getFullYear()  %></td>
+                    <td><%= (dd.getHours()+1) + ':' + dd.getSeconds() %></td>
+                    <td>OUT</td>
+                <% } %>
+            <% } %>
+           </tr>
+</tbody>
+</table>
+</div>
+
+<script>
+ $(document).ready(function () {
+  $('#Historybydate').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+<%function findstd(std, id){
+  for(var i=0; i<std.length; i++){
+    if(String(std[i]._id) == String(id)){
+      return std[i];
+    }
+  }
+} %>

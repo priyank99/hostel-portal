@@ -1,0 +1,48 @@
+<%include ../partials/header_admin%>
+  
+  <div class="container">
+    <form>
+      <div class="row">
+        <div class="form-group col-auto">
+         <label for="username">Username</label>
+         <input  readonly type="text" class="form-control form-control-plaintext" id="username" placeholder="<%= user.username %>"> </input>
+        </div>
+       <div class="form-group col-auto">
+         <label for="rollNo">Email id</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="rollNo" placeholder=<%= user.emailID %>></input>
+       </div>  
+      </div>
+     <div class="row">
+       <div class="form-group col-auto">
+         <label for="cardStatus"> access Level</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="cardStatus" placeholder="<%= accessLevelstr(user.accessLevel) %>"></input>         
+       </div>
+       <div class="form-group col-auto">
+         <label for="cardNo"> Assigned To</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="cardNo" placeholder="<%=user.assignedTo%>"></input>
+       </div> 
+     </div>     
+   </form>
+  </div>
+<%function accessLevelstr(x){
+  var str;
+ switch(x){
+  case 1: str="View";
+          return str;
+          break;
+     
+  case 2: str="View + Edit";
+          return str;
+          break;
+     
+  case 3: str="View + Edit + Card management";
+          return str;
+          break;
+     
+  default: str="Unknown Error/Status";
+            return str;
+            break;
+  }
+}%>
+<%include ../partials/footer%>
+  

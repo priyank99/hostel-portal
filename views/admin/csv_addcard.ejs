@@ -1,0 +1,12 @@
+<% include ../partials/header_admin %>
+
+ <div class="container">
+    <p>Use the form below to upload a list of Cards.
+        Click <a href="/cardex.csv">here</a> for an example template.</p>
+    <form action="/admin/csvaddcard" method="POST" encType="multipart/form-data">
+        <input type="file" name="file" accept="*.csv" /><br/><br/>
+        <input type="submit" value="Upload Card ids" />
+    </form>
+</div>
+
+<%include ../partials/footer %>

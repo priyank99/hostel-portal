@@ -1,0 +1,19 @@
+<%include ../partials/header_student%>
+
+<div class="container">
+  <form action="/student/blockcard" method="POST">
+    <div class="row">
+      <div class="form-group">
+        <label for="pwd">Enter your Password to Confirm</label>
+        <input type="password" class="form-control" name="pwd" id="pwd" placeholder = "Enter password">
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn btn-primary" value="Submit" name="response">Submit</button>
+    </div>
+  </form>
+    <a href="/student"><button type="submit" class="btn btn-primary">Cancel</button>
+    </a>
+</div>
+
+<%include ../partials/footer%>

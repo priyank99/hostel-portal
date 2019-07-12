@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Home Page </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+    body{
+  margin:0;
+  overflow:auto;
+}
+header {
+text-align: center;
+font-size: 3.5vw;
+color: white;
+max-height: 15vw;
+background-color: #283593 !important;
+float:right;
+}
+
+header > img{
+  padding: 1.5vw 1vw 1.5vw 1vw;
+  width: 12%;
+  height: 32%;
+}
+
+footer{
+  font-size: 1.5vw;
+  text-align: right;
+  background: #424242;
+  padding: 1vw 0 1vw 0;
+}
+
+footer > p{
+  text-shadow: 1px 1px rgba(30, 30, 30, 0.5);
+  margin: 0 9vw 0 0;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+footer > a{
+  text-decoration: none;
+  color: white;
+  margin: 0 9vw 0 0;
+  line-height: 5vw;
+}
+div > button{
+  margin: 3vw 0 0 0;
+}
+
+#homepage{
+  padding: 15vw 0 5vw 6vw;
+}
+
+#demo{
+  max-width: 85%;
+  max-height: 60%;
+  padding: 0 0 0 5vw;
+}
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <header class="container-fluid">
+      <img src="NSIT-Logo.png" class="img-fluid float-left"><span style="font-size:3vw">WELCOME TO </span> <br> <span>NETAJI SUBHAS INSTITUTE OF TECHNOLOGY</span> </header>
+  </div>
+
+  <div id="homepage" class="container-fluid">
+    <div class="row flex-wrap">
+      <div class="col-md-4">
+        <button class="btn btn-outline-dark btn-block btn-lg"><a href="/student/login"> Student Login </a></button><br>
+        <button class="btn btn-outline-dark btn-block btn-lg"><a href="/parent/login"> Parent Login </a></button><br>
+        <button class="btn btn-outline-dark btn-block btn-lg"><a href="/admin/login"> Admin Login </a></button><br>
+      </div>
+      <div class="col-md-8">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://images.unsplash.com/photo-1533821312764-eb0483f98f69?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d383aa86b1a43b453dd58374919155b9&auto=format&fit=crop&w=600&q=80" alt="Los Angeles" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1453280339213-efb07f95531b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0a3e25a19b4034a8634cc6c96b7d014&auto=format&fit=crop&w=600&q=80" alt="Chicago" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5a31d03ddee66863a599421f792e07b&auto=format&fit=crop&w=600&q=80" alt="New York" width="1100" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <footer class="container-fluid">
+    <a href="#"> College_NAME </a><br>
+    <a href="#"> Contact US </a>
+    <p class="text-primary"> Developed By: AS&PS @Venture Sky</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+/*function(req, res, next){
+  passport.authenticate('local', function(err, user, info){
+    if(err){
+      req.flash("error", err.message);
+      return next(err);
+    }
+    if(!user){
+      req.flash("failure", "Incorrect Username or Password");
+      return res.redirect('/student/login');
+    }
+    req.logIn(user, function(err){
+     if(err){
+       req.flash("error", err.message);
+       return next(err);
+     }
+      req.flash("success", "Successfully Signed In! Hello "+ req.body.username);
+      res.redirect('/student/history');
+    });
+  })(req, res, next);
+}*/

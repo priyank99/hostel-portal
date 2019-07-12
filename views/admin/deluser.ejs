@@ -1,0 +1,69 @@
+<%include ../partials/header_admin%>
+
+<div class="container">
+    <form action="/admin/<%= id %>/deluser?_method=DELETE" method="post" >
+      <div class="row">
+        <div class="form-group col-auto">
+         <label for="username">Username</label>
+         <input  readonly type="text" class="form-control form-control-plaintext" id="username" value="<%= user.username %>"> </input>
+        </div>
+       <div class="form-group col-auto">
+         <label for="admname">Admin Name</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="admname" value=<%= user.adminname %>></input>
+       </div>  
+      </div>
+     <div class="row">
+       <div class="form-group col-auto">
+         <label for="email">Email ID </label>
+         <input readonly type="text" class="form-control" id="email" value="<%= user.emailID %>"></input>         
+       </div>
+       <div class="form-group col-auto">
+         <label for="mobNo"> Mobile Number</label>
+         <input readonly type="text" class="form-control" id="mobNo" value="<%=user.mobNo%>"></input>
+       </div>
+     </div>
+     <div class = "row">
+       <div class="form-group col-auto">
+         <label for="addr"> Address </label>
+         <input readonly type="text" class="form-control" id="addr"  value="<%= user.address %>"></input>         
+       </div>
+       <div class="form-group col-6">
+         <label for="accessLev"> Access Level </label>
+         <input readonly type="text" class="form-control" id="accessLev" value="<%= accessLevelstr(user.accessLev) %>"></input>        
+       </div> 
+     </div>
+     <div class = "row">
+       <div class="form-group col-6">
+         <label for="assign"> Assigned Hostel </label>
+         <input readonly type="text" class="form-control" id="assign" value="<%= user.assignedTo %>"></input>         
+       </div>
+     </div>
+      <button class="btn btn-warning">
+        Delete
+      </button>
+   </form>
+  </div>
+
+<%function accessLevelstr(x){
+  var str;
+ switch(x){
+  case 1: str="View";
+          return str;
+          break;
+     
+  case 2: str="View + Edit";
+          return str;
+          break;
+     
+  case 3: str="View + Edit + Card management";
+          return str;
+          break;
+     
+  default: str="Unknown Error/Status";
+            return str;
+            break;
+  }
+}%>
+
+
+<%include ../partials/footer%>

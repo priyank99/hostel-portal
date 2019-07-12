@@ -1,0 +1,36 @@
+<%include ../partials/header_student%>
+
+<div class="container">
+    <form action="/student/addparent" method="post">
+      <div class="row">
+        <div class="form-group col-sm-6">
+         <label for="name">Name</label>
+         <input type="text" class="form-control" id="name" name="parent[name]" placeholder="Enter Name"> </input>
+        </div>
+       <div class="form-group col-sm-6">
+         <label for="dob">Date of Birth</label>
+         <input type="date" class="form-control" id="dob" name="parent[dob]" placeholder="Enter DOB"></input>
+       </div>  
+      </div>
+     <div class="row">
+       <div class="form-group col-sm-6">
+         <label for="email"> Email ID(Username)</label>
+         <input type="email" class="form-control" id="cardStatus" aria-describedby="emailInfo" name="parent[emailID]" placeholder="Enter Email ID"></input>         
+         <small id="emailInfo" class="text-mute form-text"> Email ID would be the username of the User.</small>
+       </div>
+       <div class="form-group col-sm-6">
+         <label for="mobNo"> Mobile Number </label>
+         <input type="text" class="form-control" id="mobNo" name="parent[mobNo]" placeholder="Enter Mobile Number"></input>
+       </div> 
+     </div>     
+     <div class="row">
+       <div class="form-group col-sm-6">
+         <label for="addr"> Address </label>
+         <input type="text" class="form-control" id="addr" name="parent[address]" placeholder="Enter Address"></input>
+       </div>
+     </div>
+     <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+</div>
+
+<%include ../partials/footer%>

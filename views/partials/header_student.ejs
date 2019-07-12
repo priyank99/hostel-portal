@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>NSIT</h1>
+  <p>Hostel Management System</p>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="/student/home">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/student/viewprofile">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/student/history">History</a>
+      </li>
+      <% if(parentcreate==false){%>
+        <li class="nav-item">
+        <a class="nav-link" href="/student/addparent">Add Parent Information</a>
+        </li>
+      <%}%>
+       <% if(parentcreate==true){%>
+        <li class="nav-item">
+        <a class="nav-link" href="/student/parentinfo">View Parent Information</a>
+        </li>
+      <%}%>
+        <li class="nav-item">
+        <a class="nav-link" href="/student/blockcard">Lost Card</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/student/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <% if(success && success.length>0){%>
+      <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+    <%}%>
+    <% if(error && error.length>0){%>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+    <%}%>    
+  </div>

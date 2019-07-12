@@ -1,0 +1,88 @@
+<%include ../partials/header_admin_student%>
+
+<div class="container">
+    <form>
+      <div class="row">
+        <div class="form-group col-auto">
+         <label for="username">Username</label>
+         <input  readonly type="text" class="form-control form-control-plaintext" id="username" name="std[username]" value="<%= user.username %>"> </input>
+        </div>
+       <div class="form-group col-auto">
+         <label for="rollNo">Roll Number</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="rollNo" name="std[rollNo]" value=<%= user.rollNo %>></input>
+       </div>
+      </div>
+     <div class="row">
+       <div class="form-group col-auto">
+         <label for="cardStatus"> Card Status</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="cardStatus" placeholder="<%= cardStat(card.cardStatus) %>"></input>
+       </div>
+       <div class="form-group col-auto">
+         <label for="cardNo"> Card Number</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="cardNo" placeholder="<%=card.cid%>"></input>
+       </div>
+     </div>
+     <div class = "row">
+       <div class="form-group col-auto">
+         <label for="addr"> Address </label>
+         <input readonly type="text" class="form-control" id="addr" name="std[address]" value="<%= user.address %>"></input>
+       </div>
+       <div class="form-group col-auto">
+         <label for="email"> Email ID </label>
+         <input readonly type="text" class="form-control" id="email" name ="std[emailID]" value="<%=user.emailID%>"></input>
+       </div>
+     </div>
+     <div class = "row">
+       <div class="form-group col-auto">
+         <label for="lgn"> Local Guardian Name </label>
+         <input readonly type="text" class="form-control" id="lgn" name="std[localGuardName]" value="<%= user.localGuardName %>"></input>
+       </div>
+       <div class="form-group col-auto">
+         <label for="lgmn"> Local Guardian Mobile Number </label>
+         <input readonly type="text" class="form-control" id="lgmn" name ="std[localGuardMobNo]" value="<%= user.localGuardMobNo %>"></input>
+       </div>
+     </div>
+     <div class="row">
+        <div class="form-group col-auto">
+          <label for="lga"> Local Guardian Address </label>
+          <input readonly type="text" class="form-control" id="lga" name="std[localGuardAddr]" value="<%= user.localGuardAddr%>"></input>
+       </div>
+     </div>
+   </form>
+
+<p>
+  The card of student <%= user.username %> with Roll No <%= user.rollNo %>
+  Are you sure ?
+</p>
+   <form method="post" action="/admin/student/blockcard">
+     <input type="submit" name"submitbtn" value="Yes"></input>
+   </form>
+
+
+  </div>
+<%function cardStat(x){
+  var str;
+ switch(x){
+  case 1: str="Valid";
+          return str;
+          break;
+
+  case 2: str="Lost Card";
+          return str;
+          break;
+
+  case 3: str="Card Blocked: Contact IMS";
+          return str;
+          break;
+
+  case 4: str="Card Not Assigned";
+          return str;
+          break;
+
+  default: str="Unknown Error/Status";
+            return str;
+            break;
+  }
+}%>
+
+<%include ../partials/footer%>

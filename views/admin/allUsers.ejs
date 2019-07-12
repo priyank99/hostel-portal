@@ -1,0 +1,83 @@
+<%include ../partials/header_admin%>
+
+<div class="container" style="margin-top:30px">
+  <p>Welcome Name: <%=name%> </p>
+  
+  <table class="table table-bordered table-striped">
+     <thead class="thead-dark">
+       <tr class="text-center">
+         <th>Name</th>
+         <th>Access Level </th>
+         <th>Email ID</th>
+         <th>Assigned Hostel</th>
+         <% if(access>2){%>
+         <th>Edit/Remove</th>
+         <%}%>
+       </tr>
+     </thead>
+     <tbody>
+        <% for(var i=0; i<user.length; i++) {%>
+            <tr id="buttons">
+              <td><%= user[i].adminname %></td>
+              <td><%= accessLevelstr(user[i].accessLevel) %></td>
+              <td><%= user[i].emailID %></td>
+              <td><%= user[i].assignedTo %></td>
+              <% if(access>2){%>
+                <td class="text-center">
+                  <form action="/admin/<%= user[i]._id %>/edituser" method="get" style="display:inline">
+                    <button class="btn btn-warning btn-sm">
+                      Edit  
+                    </button>
+                  </form>
+                  <form action="/admin/<%= user[i]._id %>/deluser" method="get" style="display:inline">
+                    <button class="btn btn-danger btn-sm">
+                      Remove 
+                    </button>
+                  </form>
+                </td>
+              <%}%>
+           </tr>
+          <% } %>
+       <%/*<tr class="table-success text-center">
+         <td>2018-08-06</td>
+         <td>16:25</td>
+         <td>IN</td>
+       </tr>
+       <tr class="text-center">
+         <td>2018-08-06</td>
+         <td>09:52</td>
+         <td>OUT</td>
+       </tr>
+       <tr class="table-success text-center">
+         <td>2018-08-06</td>
+         <td>09:15</td>
+         <td>IN</td>
+       </tr>*/%>
+     </tbody>
+   </table>
+
+  </div>
+</div>
+
+<%function accessLevelstr(x){
+  var str;
+ switch(x){
+  case 1: str="View";
+          return str;
+          break;
+     
+  case 2: str="View + Edit";
+          return str;
+          break;
+     
+  case 3: str="View + Edit + Card management";
+          return str;
+          break;
+     
+  default: str="Unknown Error/Status";
+            return str;
+            break;
+  }
+}%>
+
+<%include ../partials/footer%>

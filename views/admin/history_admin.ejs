@@ -1,0 +1,63 @@
+<%include ../partials/header_admin_student%>
+
+<div class="container" style="margin-top:30px">
+  <p class="well">
+    Student Roll No. : <%= history[0].rollNo %><br>
+    Current Status : <% if(history[(history.length-1)].activity==true){%>
+      <%= "PRESENT in the Hostel" %>
+      <%}else{%>
+        <%= "NOT PRESENT in the Hostel" %>
+      <%}%>                       
+  </p>
+  
+  <table class="table table-bordered table-striped">
+     <thead class="thead-dark">
+       <tr class="text-center">
+         <th>Date</th>
+         <th>Time</th>
+         <th>Activity</th>
+       </tr>
+     </thead>
+     <tbody>
+      <% var dd = new Date(history[0].datetime); %>
+
+        <% for(var i=(history.length-1); i>=0; i--) {%>
+      <% dd = new Date(history[i].datetime); %>
+      <% dd2 = new Date();%>
+          <% if(history[i].activity ==true) {%>
+            <tr class="table-success text-center">
+              
+              <td><%= dd.getDate() + '-' + (dd.getMonth()+1) +'-'+ dd.getFullYear()  %></td>
+              <td><%= (dd.getHours()+1) + ':' + (dd.getMinutes()+1) + ':' + dd.getSeconds() %></td>
+              <td>IN</td>
+           </tr>
+          <% } else {%>
+            <tr class="text-center">
+              <td><%= dd.getDate() + '-' + (dd.getMonth()+1) +'-'+ dd.getFullYear()  %></td>
+              <td><%= (dd.getHours()+1) + ':' + (dd.getMinutes()+1) + ':' + dd.getSeconds() %></td>
+              <td>OUT</td>
+           </tr>
+          <% } %>
+        <% } %>
+       <%/*<tr class="table-success text-center">
+         <td>2018-08-06</td>
+         <td>16:25</td>
+         <td>IN</td>
+       </tr>
+       <tr class="text-center">
+         <td>2018-08-06</td>
+         <td>09:52</td>
+         <td>OUT</td>
+       </tr>
+       <tr class="table-success text-center">
+         <td>2018-08-06</td>
+         <td>09:15</td>
+         <td>IN</td>
+       </tr>*/%>
+     </tbody>
+   </table>
+
+  </div>
+</div>
+
+<%include ../partials/footer%>

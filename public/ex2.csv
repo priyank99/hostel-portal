@@ -1,0 +1,5 @@
+rollNo,username,password,name,hostname,emailID,mobNo,roomNo,address,branch,section,dob
+251,stud1,,Student One,BH1,,9123456789,A123,adds1,AbC,1,1/1/1990
+252,stud2,,Student Two,BH2,,9123456788,A124,adds2,AbD,1,1/1/1990
+253,stud3,,Student Three,BH3,,9123456787,A125,adds3,AbC,2,2/1/1990
+254,stud4,,Student Four,BH3,,9123456786,A126,adds4,AbD,2,3/1/1990

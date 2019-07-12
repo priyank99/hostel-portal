@@ -1,0 +1,51 @@
+<%include ../partials/header_admin%>
+
+<div class="container">
+    <form action="/admin/<%= id %>/edituser?_method=PUT" method="post" >
+      <div class="row">
+        <div class="form-group col-auto">
+         <label for="username">Username</label>
+         <input  readonly type="text" class="form-control form-control-plaintext" id="username" value="<%= user.username %>"> </input>
+        </div>
+       <div class="form-group col-auto">
+         <label for="admname">Admin Name</label>
+         <input readonly type="text" class="form-control form-control-plaintext" id="admname" value=<%= user.adminname %>></input>
+       </div>  
+      </div>
+     <div class="row">
+       <div class="form-group col-auto">
+         <label for="email">Email ID </label>
+         <input type="text" class="form-control" id="email" name="adm[emailID]" value="<%= user.emailID %>"></input>         
+       </div>
+       <div class="form-group col-auto">
+         <label for="mobNo"> Mobile Number</label>
+         <input type="text" class="form-control" id="mobNo" name="adm[mobNo]" value="<%=user.mobNo%>"></input>
+       </div>
+     </div>
+     <div class = "row">
+       <div class="form-group col-auto">
+         <label for="addr"> Address </label>
+         <input type="text" class="form-control" id="addr" name="adm[address]" value="<%= user.address %>"></input>         
+       </div>
+       <div class="form-group col-6">
+         <label for="accessLev"> Access Level </label>
+         <select class="form-control" id="accessLev" name="adm[accessLevel]" value="<%= user.accessLevel%>">
+           <option value="1">View Student Information and History</option>
+           <option value="2"> View and Edit Student Information and History</option>
+           <option value="3"> View, Edit and Add Users</option>
+         </select>
+       </div> 
+     </div>
+     <div class = "row">
+       <div class="form-group col-6">
+         <label for="assign"> Assigned Hostel </label>
+         <input type="text" class="form-control" id="assign" name="adm[assignedTo]" value="<%= user.assignedTo %>"></input>         
+       </div>
+     </div>
+      <button class="btn btn-warning">
+        Update
+      </button>
+   </form>
+  </div>
+
+<%include ../partials/footer%>
